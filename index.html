@@ -1,0 +1,129 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MQTT</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- Added the Bootstrap CDN -->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="col-sm-12">
+        <center>
+            <h1>Online MQTT Web Client</h1>
+        </center>
+        <div class="card">
+            <div class="card-header">
+                <h4>Broker</h4>
+            </div>
+            <div class="card-body">
+                <label class="text1" for="topic">Address:</label>
+                <input id="address" type="text" value="wss://test.mosquitto.org:8081/mqtt">
+                <br>
+                <br>
+                <button id="broker" class="btn btn-primary" value="">Connect</button>
+                <button id="broker" class="btn btn-warning" value="">Disconnect</button>
+                <br>
+                <label class="text2" for="topic">Status:</label>
+                <input id="status" disabled type="text" value="Press Connect">
+            </div>
+            <div class="card-footer text-muted">
+                <h4>Incoming Messages</h4>
+                <table id="table-msg" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Payload</th>
+                            <th>Time Stamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="incoming">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Publish</h4>
+            </div>
+            <div class="card-body">
+                <label class="text1" for="topic">Topic:</label>
+                <input id="pub-input" type="text" placeholder="Enter Topic...">
+                <label class="text2" for="topic">Payload:</label>
+                <input id="pub-input-payload" type="text" placeholder="Enter Message....">
+                <br>
+                <br>
+                <button id="pub-button" class="btn btn-primary" value="">Publish</button>
+            </div>
+            <div class="card-footer text-muted">
+                <h4>Published Messages</h4>
+                <table id="table-msg" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Payload</th>
+                            <th>Time Stamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="published">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <div class="card">
+            <div class="card-header">
+                <h4>Subscribe</h4>
+            </div>
+            <div class="card-body">
+                <labe class="text3">Topic:</labe>
+                <input id="sub-input" type="text" placeholder="Enter Topic....">
+                <br>
+                <br>
+                <button id="sub-button" class="btn btn-primary" value="">Subscribe</button>
+                <button id="sub-button" class="btn btn-warning" value="">Unsubscribe</button>
+            </div>
+            <div class="card-footer text-muted">
+                <h4>Subscribed Messages</h4>
+                <table id="table-msg" class="table table-sm">
+                    <thead>
+                        <tr>
+                            <th>Topic</th>
+                            <th>Time Stamp</th>
+                        </tr>
+                    </thead>
+                    <tbody id="subscribe">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+<script src="./browserMqtt.js"></script>
+<script src="./index.js"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</html>
